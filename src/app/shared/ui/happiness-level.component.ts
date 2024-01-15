@@ -37,12 +37,13 @@ type Mood = 'sad' | 'happy' | 'neutral';
 export class HappinessLevelComponent implements ControlValueAccessor {
   mood = 'neutral';
 
-  onChange = (value: Mood) => {};
-  onTouch = () => {};
+  onChange = (value: Mood) => { };
+  onTouch = () => { };
 
   setMood(mood: Mood) {
     this.mood = mood;
     this.onChange(mood);
+    this.onTouch();
   }
 
   writeValue(value: Mood) {
